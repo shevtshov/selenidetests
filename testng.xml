@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Sample Test Suite" parallel="false">
+
+    <test name="LoginToJiraSelenide">
+
+        <parameter name="browserName" value="Chrome"/>
+
+        <classes>
+            <class name="LoginToJiraSelenide"/>
+        </classes>
+    </test>
+
+    <listeners>
+        <listener class-name="utils.TestNGListener"/>
+    </listeners>
+
+</suite>
