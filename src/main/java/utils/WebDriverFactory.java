@@ -1,19 +1,11 @@
 package utils;
 
-import com.google.common.collect.ImmutableMap;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.remote.Command;
-import org.openqa.selenium.remote.CommandExecutor;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.Response;
-
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 public class WebDriverFactory {
 
@@ -25,7 +17,6 @@ public class WebDriverFactory {
 
     public static void createInstance(String browserName) {
 
-        DesiredCapabilities capability = null;
         WebDriver driver = null;
 
         if (browserName.toLowerCase().contains("firefox")) {
@@ -37,7 +28,6 @@ public class WebDriverFactory {
         } else if (browserName.toLowerCase().contains("chrome")) {
 //      WebDriverManager.chromedriver().version("78.0.3904.70").setup();
             WebDriverManager.chromedriver().setup();
-//            capability.setAcceptInsecureCerts();
             driver = new ChromeDriver();
 
         } else {
@@ -47,15 +37,4 @@ public class WebDriverFactory {
         driver.manage().window().maximize();
         webDriver = driver;
     }
-
-//  public static void setWebDriver(WebDriver driver) {
-//    webDriver = driver;
-//  }
-//
-//  public static void closeDriver() {
-//    webDriver.quit();
-//  }
-
-
-
 }
