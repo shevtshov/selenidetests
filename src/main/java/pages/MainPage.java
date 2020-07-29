@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class MainPage {
 
-    private SelenideElement profileIcon = $(By.id("header-details-user-fullname"));
+    private SelenideElement profileIcon = $(By.id("headker-details-user-fullname"));
  //   private SelenideElement createLinkButton = $(By.id("create_link");
     private SelenideElement projectField = $(By.id("project-field"));
     private SelenideElement summaryField = $(By.id("summary"));
