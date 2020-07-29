@@ -11,6 +11,6 @@ jobs:
           command: |
             mvn clean test
       - store_artifacts:
-                path: screenshots
-                destination: screenshots
+                path: buid/reports/tests
+                destination: buid/reports/tests
                 when: always
