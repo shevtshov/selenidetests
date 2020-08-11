@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class MainPage {
 
-    private SelenideElement profileIcon = $(By.id("hader-details-user-fullname"));
+    private SelenideElement profileIcon = $(By.id("header-details-user-fullname"));
 
     public void profileIsPresent() {
         profileIcon.shouldBe(Condition.enabled);
