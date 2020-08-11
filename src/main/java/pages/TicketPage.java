@@ -14,6 +14,7 @@ public class TicketPage {
     private SelenideElement commentField = $(By.id("comment"));
     private SelenideElement addCommentSubmit = $(By.id("issue-comment-add-submit"));
     private SelenideElement deleteCommentButton =  $(By.xpath("//*[@title='Delete']"));
+    private SelenideElement commentDeleteSubmit = $(By.id("comment-delete-submit"));
 
 
     public void OpenTicket() {
@@ -39,6 +40,9 @@ public class TicketPage {
     }
     public void clickOnDeleteCommentButton(){
         deleteCommentButton.click();
+    }
+    public void deleteComment(){
+        commentDeleteSubmit.click();
     }
     public void checkDeletedMessage(){
         $(By.xpath("//*[contains(text(),'There are no comments yet on this issue.')]")).shouldBe(Condition.exist);

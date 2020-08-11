@@ -29,14 +29,17 @@ public class CreateAndDeleteComment {
         loginPage.enterLoginAndPassword();
         loginPage.loginButton.click();
         mainPage.profileIsPresent();
-        //Open ticket and Add comment
+        //Open ticket
         ticketPage.OpenTicket();
         ticketPage.TicketNumberIsPresent();
+        //Add comment
         ticketPage.ClickOnAddCommentButton();
         ticketPage.EnterComment();
         ticketPage.ClickOnAddCommentSubmit();
         ticketPage.messageCheckAdded();
+        //Delete comment
         ticketPage.clickOnDeleteCommentButton();
+        ticketPage.deleteComment();
         ticketPage.checkDeletedMessage();
     }
 }
