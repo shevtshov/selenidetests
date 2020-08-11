@@ -18,6 +18,7 @@ public class LoginToJira {
     @BeforeMethod()
     public void setUp() {
         Configuration.browser = "Chrome";
+        Configuration.reportsFolder = "screenshots";
     }
 
     @Test()
