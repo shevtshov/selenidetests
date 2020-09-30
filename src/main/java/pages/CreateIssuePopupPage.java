@@ -3,8 +3,10 @@ package pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import utils.WebDriverFactory;
 
-import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.*;
 
 public class CreateIssuePopupPage {
 
@@ -13,10 +15,12 @@ public class CreateIssuePopupPage {
     private SelenideElement summaryField = $(By.id("summary"));
     private SelenideElement isueTypeField = $(By.id("summary"));
     private SelenideElement createIssueButton = $(By.id("create-issue-submit"));
+    private SelenideElement cancelButton = $(By.xpath("//a[@class='cancel']"));
 
-public  void clickOnCreateTicketButton(){
-    createLinkButton.click();
-}
+
+    public void clickOnCreateTicketButton() {
+        createLinkButton.click();
+    }
 
 
     public void projectFieldIsEnabled() {
@@ -34,8 +38,14 @@ public  void clickOnCreateTicketButton(){
     public void inputIssuedType() {
         isueTypeField.setValue("Task");
     }
-    public void clickOnCreateIssueButton(){
+
+    public void clickOnCreateIssueButton() {
         createIssueButton.click();
     }
 
+    public void clickOnCancelButtonAndCheckPopU() {
+        cancelButton.click();
+        switchTo().alert().accept();
+        createLinkButton.shouldBe(Condition.enabled);
+    }
 }
