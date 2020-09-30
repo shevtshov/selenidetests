@@ -37,7 +37,9 @@ public class CreateNewTicket {
         createIssuePopupPage.inputIssuedType();
         createIssuePopupPage.inputProjectField();
         createIssuePopupPage.inputSummary();
-        createIssuePopupPage.clickOnCreateIssueButton();
+        createIssuePopupPage.clickOnCancelButtonAndCheckPopU();
+//        createIssuePopupPage.clickOnCreateIssueButton();
+
 
   //      $(By.id("create_link")).click();
   //      $(By.id("project-field")).shouldBe(Condition.enabled);
@@ -45,6 +47,6 @@ public class CreateNewTicket {
    //     $(By.id("issuetype-field")).setValue("Task").pressTab();
    //     $(By.id("summary")).setValue("Test ticket").pressTab();
    //     $(By.id("create-issue-submit")).click();
-        $(By.id("aui-flag-container")).shouldBe(Condition.visible);
+//        $(By.id("aui-flag-container")).shouldBe(Condition.visible);
     }
 }
